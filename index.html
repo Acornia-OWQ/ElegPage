@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acornia的主页</title>
+    <meta name="description" content="Acornia的个人引导页面,您可以从这里访问到我的所有公开服务">
+    <meta name="keywords" content="Acornia,个人主页,程序员,个人引导页">
+    <link rel="icon" type="image/ico" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="assets/fonts/remixicon.css">
+    <link rel="stylesheet" href="assets/css/themes/light.css">
+    <link rel="stylesheet" href="assets/css/themes/dark.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        // Meting API 配置 支持多节点
+        const METING_APIS = [
+            '/meting/',
+            'https://ioioi.lol/meting/'
+        ];
+
+        // 音乐平台配置
+        const PLATFORM_CONFIG = {
+            netease: {
+                name: '网易云音乐',
+                defaultPlaylist: '13230215625'
+            },
+            tencent: {
+                name: 'QQ音乐',
+                defaultPlaylist: '8982152830'
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wave-bg"></div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <button class="theme-toggle">
+                <i class="ri-sun-line"></i>
+            </button>
+
+            <!-- 左侧信息 -->
+            <div class="profile-left">
+                <div class="avatar-container">
+                    <img class="profile-photo" src="assets/images/avatar.jpg" alt="头像">
+                </div>
+                <h1 class="profile-name">Acornia</h1>
+                <!-- 删除id="hitokoto"和 id="from"则不使用一言 -->
+                <p class="profile-title" id="hitokoto"></p>
+                <p class="profile-bio" id="from"></p>
+                <div class="copyright-info">
+                    <a class="copyright" href="mailto:hi@kisou.cn">Copyright © 2024-2025 Acornia</a>
+                    <span class="copyright-divider">|</span>
+                    <!-- 请保留作者权益谢谢 -->
+                    <a class="copyright" href="https://github.com/Acornia-OWQ/ElegPage" target="_blank">ElegPage</a>
+                </div>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="profile-right">
+                <!-- 时间模块 -->
+                <div class="time-section">
+                    <div class="time">
+                        <div class="time-colon">
+                            <div class="time-text">
+                                <span class="num hours">00</span>
+                                <span class="text">Hours</span>
+                            </div>
+                            <span class="colon">:</span>
+                        </div>
+                        <div class="time-colon">
+                            <div class="time-text">
+                                <span class="num minutes">00</span>
+                                <span class="text">Minutes</span>
+                            </div>
+                            <span class="colon">:</span>
+                        </div>
+                        <div class="time-colon">
+                            <div class="time-text">
+                                <span class="num seconds">00</span>
+                                <span class="text">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 音乐播放器 -->
+                <div class="music-section">
+                    <h2 class="section-title">音乐播放器</h2>
+                    <div class="music-player">
+                        <audio id="audio" src="" alt="海报"></audio>
+                        <div class="music-info">
+                            <div class="music-cover" id="musicCover">
+                                <i class="ri-music-2-line"></i>
+                            </div>
+                            <div class="music-details">
+                                <div class="song-info">
+                                    <div class="music-title-container">
+                                        <div class="music-title" id="musicTitle">加载中...</div>
+                                    </div>
+                                </div>
+                                <div class="current-lyric" id="currentLyric">暂无歌词</div>
+                            </div>
+                            <div class="music-controls">
+                                <button class="control-btn" onclick="prevTrack()">
+                                    <i class="ri-skip-back-line"></i>
+                                </button>
+                                <button class="control-btn play-btn" onclick="togglePlay()">
+                                    <i class="ri-play-line" id="playIcon"></i>
+                                </button>
+                                <button class="control-btn" onclick="nextTrack()">
+                                    <i class="ri-skip-forward-line"></i>
+                                </button>
+                                <div class="volume-container">
+                                    <button class="control-btn volume-btn" onclick="toggleVolumeSlider()">
+                                        <i class="ri-volume-up-line volume-icon"></i>
+                                    </button>
+                                    <div class="volume-slider-container">
+                                        <input type="range" class="volume-slider" min="0" max="100" value="100" orient="vertical">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-area">
+                            <div class="time">
+                                <span id="current">0:00</span>
+                                <div class="progress-bar">
+                                    <div class="progress" id="progress"></div>
+                                </div>
+                                <span id="duration">0:00</span>
+                            </div>
+                            <div class="progress-controls">
+                                <button class="playlist-toggle" id="playlistToggleBtn" onclick="togglePlaylist()">
+                                    <i class="ri-play-list-2-fill" id="playlistIcon"></i>
+                                </button>
+                                <button class="playlist-toggle lyrics-btn" onclick="toggleLyrics()">
+                                    <span id="lyricsIcon"><i class="ri-play-list-fill"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="lyrics" id="lyrics"></div>
+                        <div class="playlist" id="playlist" style="display: none;">
+                            <div class="playlist-header">
+                                <div class="playlist-header-left">
+                                    <span>播放列表</span>
+                                    <div class="server-switch">
+                                        <button class="server-btn active" data-server="netease" onclick="switchMusicServer('netease')">网易云</button>
+                                        <button class="server-btn" data-server="tencent" onclick="switchMusicServer('tencent')">QQ音乐</button>
+                                    </div>
+                                </div>
+                                <span class="playlist-count">0 首歌曲</span>
+                            </div>
+                            <div class="playlist-content"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 链接 -->
+                <div class="social-links">
+                    <a href="https://blog.ioioi.lol/" class="social-btn">
+                        <i class="ri-blogger-line"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="ri-bilibili-line"></i>
+                        <span>bilibili</span>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="ri-github-line"></i>
+                        <span>Github</span>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="ri-twitter-x-line"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="ri-telegram-2-line"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="ri-mail-ai-line"></i>
+                        <span>Mail</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
