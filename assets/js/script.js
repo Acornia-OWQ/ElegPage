@@ -2,8 +2,15 @@
 // https://ioioi.lol
 // https://github.com/Acornia-OWQ/ElegPage
 // Copyright(c) 2025 Acornia - OWQ < hi@kisou.cn>
-// 自由使用、修改、分发，禁止售卖 ，商业使用说明：企业或组织将本软件用于内部运营、免费服务或非销售类产品，完整协议：<LICENSE> 。
+// 自由使用、修改、分发，禁止售卖 ，商业使用说明：企业或组织将本软件用于内部运营、免费服务或非销售类产品，完整协议：<https://github.com/Acornia-OWQ/ElegPage/blob/main/LICENSE.md> 。
 // 本代码按“原样”提供，作者不承担任何责任。
+
+// ElegPage
+// https://ioioi.lol
+// https://github.com/Acornia-OWQ/ElegPage
+// Copyright(c) 2025 Acornia - OWQ < hi@kisou.cn>
+//Freedom to use, modify, distribute, prohibit sale, commercial useDescription: A business or organization uses this software for internal operations, free services, or non-sales products, entire agreement: <https://github.com/Acornia-OWQ/ElegPage/blob/main/LICENSE.md>.
+//This code is provided "as is" without any liability on the part of the author.
 
 ! function () {
     console.log('%cTemplate: %cElegPage%cBy Acornia', 'color: rgba(255,255,255,.6); background: #5e72e4; font-size: 15px;border-radius:5px 0 0 5px;padding:10px 0 10px 20px;', 'color: rgba(255,255,255,1); background: #5e72e4; font-size: 15px;border-radius:0;padding:10px 15px 10px 0px;', 'color: #fff; background: #92A1F4; font-size: 15px;border-radius:0 5px 5px 0;padding:10px 20px 10px 15px;');
