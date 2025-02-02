@@ -109,8 +109,8 @@ const PLATFORM_CONFIG = {
 ```
 其中的`a`标签定义超链接，用于从一张页面链接到另一张页面<br />
 `a`元素最重要的属性是 href 属性，它指示链接的目的地<br />
-例如我要修改为百度 链接为`https://www.baidu.com/`我们只需要将修改<br />
-`a href="https://blog.ioioi.lol/" class="social-btn"`修改为<br />
+例如我要修改为百度 链接为`https://www.baidu.com/`我们只需要将修改 <br />
+`a href="https://blog.ioioi.lol/" class="social-btn"`修改为 <br />
 `a href="https://www.baidu.com/" class="social-btn"`即可<br />
 `i` 标签定义了以不同的语气或情态表达的文本部分。通常内部内容会以斜体显示<br />
 在这里只是作为icon图标使用，图标库为https://remixicon.com/<br />
