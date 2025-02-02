@@ -1,8 +1,10 @@
 // ElegPage
 // https://ioioi.lol
 // https://github.com/Acornia-OWQ/ElegPage
-// Copyright 2024 Acornia < hi@kisou.cn >
-// Released under the MIT license
+// Copyright(c) 2025 Acornia - OWQ < hi@kisou.cn>
+// 自由使用、修改、分发，禁止售卖 ，商业使用说明：企业或组织将本软件用于内部运营、免费服务或非销售类产品，完整协议：<LICENSE> 。
+// 本代码按“原样”提供，作者不承担任何责任。
+
 ! function () {
     console.log('%cTemplate: %cElegPage%cBy Acornia', 'color: rgba(255,255,255,.6); background: #5e72e4; font-size: 15px;border-radius:5px 0 0 5px;padding:10px 0 10px 20px;', 'color: rgba(255,255,255,1); background: #5e72e4; font-size: 15px;border-radius:0;padding:10px 15px 10px 0px;', 'color: #fff; background: #92A1F4; font-size: 15px;border-radius:0 5px 5px 0;padding:10px 20px 10px 15px;');
     console.log('%cVersion%c 1.0.0', 'color:#fff; background: #5e72e4;font-size: 12px;border-radius:5px 0 0 5px;padding:3px 10px 3px 10px;', 'color:#fff; background: #92a1f4;font-size: 12px;border-radius:0 5px 5px 0;padding:3px 10px 3px 10px;');
