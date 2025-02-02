@@ -131,4 +131,4 @@ const PLATFORM_CONFIG = {
 ## 协议说明  
    -  **允许**: 免费使用、修改、分发（包括商业场景）  
    - **禁止**: 直接售卖软件或用于付费服务  
-   -  完整协议：[LICENSE](LICENSE)
+   -  完整协议：[LICENSE](LICENSE.md)
