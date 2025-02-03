@@ -46,9 +46,7 @@
 其中的id="hitokoto"和id="from"分别为一言API的id删除后看跟换为自己的简介或格言<br />
 
 #### 效果图
-![screenshot-1738509643679](https://github.com/user-attachments/assets/3a6749eb-94d8-4385-b41a-c41e9d214b5b)
-
-![screenshot-1738524717308](https://github.com/user-attachments/assets/67caa9ad-87e6-4cac-8f03-207b479151d7)
+![矩形 1](https://github.com/user-attachments/assets/e7c00a59-387b-4bd9-a950-2402717bba57)    ![矩形 2](https://github.com/user-attachments/assets/c9f72b26-154b-4621-9e83-2f58253f4e24)
 
 ### 音乐播放器API设置
 
