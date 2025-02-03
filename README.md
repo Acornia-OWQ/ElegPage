@@ -43,7 +43,7 @@
 <p class="profile-title" id="hitokoto"></p> //id="hitokoto"为一言获取
 <p class="profile-bio" id="from"></p> //id="from" 为该一言的来源
 ```
-其中的id="hitokoto"和id="from"分别为一言API的id删除后看跟换为自己的简介或格言<br />
+其中的 id="hitokoto" 和 id="from" 删除后看可换为自己的简介或格言<br />
 
 #### 效果图
 ![矩形 1](https://github.com/user-attachments/assets/e7c00a59-387b-4bd9-a950-2402717bba57)    ![矩形 2](https://github.com/user-attachments/assets/c9f72b26-154b-4621-9e83-2f58253f4e24)
