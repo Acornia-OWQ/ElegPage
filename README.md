@@ -16,16 +16,13 @@
 <meta name="keywords" content="Acornia,个人主页,程序员,个人引导页">
 <link rel="icon" type="image/ico" href="assets/images/favicon.ico">
 ```
-### 标签介绍
-1. `title`标签定义文档的标题。标题必须是纯文本的，显示在浏览器的标题栏或页面的选项卡中<br />
-    只需要替换其中的 Acornia的主页 修改自己的即可
-2. `meta`标签定义关于 HTML 文档的元数据,元数据是关于数据的数据（信息）<br />
-   `meta`标签始终位于 head 元素 内，通常用于指定字符集、页面描述、关键词、文档作者和视口设置：<br />
-    meta name="description" content="Acornia的个人引导页面,您可以从这里访问到我的所有公开服务" <br />
-    只需要替换其中的`Acornia的个人引导页面,您可以从这里访问到我的所有公开服务`即可
-3.  meta name="keywords" content="Acornia,个人主页,程序员,个人引导页"为网站关键词<br />
-   只需要替换其中的`Acornia,个人主页,程序员,个人引导页`即可请用英文逗号隔开，不设置则不输出该 Meta 标签
-5. `link`为标签定义当前文档与外部资源之间的关系 常用于链接到外部样式表或向网站添加图标,网站图标是您在浏览器标签页,通常为正方形，像素至少为 512 x 512<br />
+### 修改配置
+```
+<title>网页标题</title>
+<meta name="description" content="网站描述">
+<meta name="keywords" content="网站搜索标签"> //用英文逗号隔开
+<link rel="icon" type="image/ico" href="logo"> //链接或路径
+```
 #### 效果图
 ![screenshot-1738504576207](https://github.com/user-attachments/assets/90d70644-6800-4207-a620-dd197961d217)
 
@@ -39,14 +36,19 @@
    <p class="profile-title" id="hitokoto"></p>
   <p class="profile-bio" id="from"></p>
 ```
+### 修改配置
+```
+<img class="profile-photo" src="图像地址" alt="图像描述"> //src= 图像链接或链接 alt= 图像的描述
+<h1 class="profile-name">名称</h1>
+<p class="profile-title" id="hitokoto"></p> //id="hitokoto"为一言获取
+<p class="profile-bio" id="from"></p> //id="from" 为该一言的来源
+```
 其中的id="hitokoto"和id="from"分别为一言API的id删除后看跟换为自己的简介或格言<br />
-id="hitokoto"为一言获取<br />
-id="from" 为该一言的来源<br />
+
 #### 效果图
 ![screenshot-1738509643679](https://github.com/user-attachments/assets/3a6749eb-94d8-4385-b41a-c41e9d214b5b)
 
 ![screenshot-1738524717308](https://github.com/user-attachments/assets/67caa9ad-87e6-4cac-8f03-207b479151d7)
-
 
 ### 音乐播放器API设置
 
@@ -62,7 +64,6 @@ const METING_APIS = [
 支持多个api节点添加只需要使用''加链接即可一行一个<br />
 ！！！注意是英文的，如果是添加在最后面检查一下前面,最后面的不需要添加如果是添加前面则需要英文逗号，
 
-
 ### 音乐播放器歌单设置
 
 在index.html中找到以下代码，在24-33行替换即可
@@ -77,6 +78,14 @@ const PLATFORM_CONFIG = {
         defaultPlaylist: '8982152830'
     }
 };
+```
+### 修改配置
+```
+name: '网易云音乐', //音乐平台
+defaultPlaylist: '13230215625' //该平台的歌单id
+
+name: 'QQ音乐', //音乐平台
+defaultPlaylist: '8982152830' //该平台的歌单id
 ```
 只修改defaultPlaylist：中的数字即可列如：defaultPlaylist: '13230215625' 修改为defaultPlaylist: '1234567890'
 在修改前请注意歌单平台
@@ -97,33 +106,33 @@ const PLATFORM_CONFIG = {
    
 ![屏幕截图 2025-02-02 221705](https://github.com/user-attachments/assets/29984116-bdaa-483a-b2fc-b90bbbdff739)
 
-7. 复制下来到assets\js\script.js中替换defaultPlaylist:即可QQ音乐同理
+7. 复制下来到index.html中替换defaultPlaylist:即可QQ音乐同理
 
 ### 按钮修改
 在index.html中的<body>找到以下代码，在第143-167行
 ```
   <a href="https://blog.ioioi.lol/" class="social-btn">
     <i class="ri-blogger-line"></i>
-    <span>Blog</span>
+    <span>biaoti</span>
   </a>
 ```
-其中的`a`标签定义超链接，用于从一张页面链接到另一张页面<br />
-`a`元素最重要的属性是 href 属性，它指示链接的目的地<br />
-例如我要修改为百度 链接为`https://www.baidu.com/`我们只需要将修改 <br />
-`a href="https://blog.ioioi.lol/" class="social-btn"`修改为 <br />
-`a href="https://www.baidu.com/" class="social-btn"`即可<br />
-`i` 标签定义了以不同的语气或情态表达的文本部分。通常内部内容会以斜体显示<br />
-在这里只是作为icon图标使用，图标库为https://remixicon.com/<br />
-1. 图标替换浏览器访问`https://remixicon.com/`找到自己喜欢的或者是相关的
+### 修改配置
+```
+<a href="链接" class="social-btn"> // 要打开的链接
+<i class="ri-blogger-line"></i> //icon图标 图标库为 `https://remixicon.com/`
+<span>标题</span>
+```
+### icon图标获取
+
+- 浏览器访问`https://remixicon.com/` 然后找到一个相关的或者你喜欢的图标
 
 ![408887763-b17bb5a3-bfd0-4c2b-8bac-2c6c9acf12f9](https://github.com/user-attachments/assets/a63a9ea2-205a-40e6-80f3-cce3a9b43f78)
 
-2. 点击该图标复制代码替换 `<i class="ri-blogger-line"></i>`
+- 点击该图标复制代码替换 `<i class="ri-blogger-line"></i>`
    
 ![408887804-b5a99d45-1c82-4e41-822b-ba0f3005fdeb](https://github.com/user-attachments/assets/922d96ae-b32e-43b5-bdec-09f444d9ced6)
 
-`span`标签是HTML中的一个内联元素，用于定义文档中的一个短片段，在这里span只是作为按钮名称<br />
-替换也是一样的`blog`替换成 博客，b站任意文本，经量文本控制在7个已内
+- 替换index.html中的`<i class="ri-blogger-line"></i>`即可
 
 ## 依赖项目
 [https://github.com/metowolf/MetingJS](https://github.com/injahow/meting-api)
